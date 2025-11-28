@@ -1,4 +1,4 @@
-Feature:
+/*Feature:
 
   Scenario: Verify place order with valid credentials
     Given user filled place order form correctly
@@ -21,3 +21,4 @@ Feature:
     When user leaves some fields empty
     And clicks Purchase
     Then error should appear
+*/

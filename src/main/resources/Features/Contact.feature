@@ -1,9 +1,9 @@
 Feature:
   Scenario: User sends a contact message
     Given the user is on the Demoblaze home page
-    When the user clicks the "Contact" link
+    When the user clicks the Contact link
     And the user enters name, email, and message
-    And the user clicks the "Send message" button
+    And the user clicks the Send message button
     Then a confirmation message should be displayed
 
   Scenario: Verify Contact form error when name is missing

@@ -6,5 +6,5 @@ Feature:
 
   Scenario: User adds product to cart from product page
     Given the user is on a product details page
-    When the user clicks the "Add to cart" button
+    When the user clicks the Add to cart button
     Then the product should be successfully added to the cart

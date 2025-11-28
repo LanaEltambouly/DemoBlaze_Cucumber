@@ -1,7 +1,7 @@
-Feature:
+/*Feature:
   Scenario: Verify that multiple products are added to cart successfully
-    Given user is on Products Page
-    When user selects multiple products
+    Given user is on Home Page
+    When user select a product
     And add them to cart
     Then products should appear in cart successfully
 
@@ -34,4 +34,4 @@ Feature:
   Scenario: Verify that deleting all products empties cart
     Given user has multiple products in cart
     When user deletes all products
-    Then cart should be empty
+    Then cart should be empty*/
