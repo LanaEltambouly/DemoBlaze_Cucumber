@@ -24,7 +24,6 @@ public class Home_stepDef {
     @Given("user is on Home Page")
     public void UserIsonHomePage(){
         Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/");
-      //  Assert.assertTrue(homePage.getActualHomeStatement().contains(homePage.getExpectedHomeStatement()));
     }
 
     @When("user clicks Phones category")
@@ -44,7 +43,7 @@ public class Home_stepDef {
 
     @Then("only laptops should be displayed")
     public void onlyLaptopsShouldBeDisplayed() {
-        Assert.assertTrue(laptopsCatPage.expectedLaptops.containsAll(laptopsCatPage.getProducts())); //*
+        Assert.assertTrue(laptopsCatPage.expectedLaptops.containsAll(laptopsCatPage.getProducts()));
     }
 
     @When("user clicks Monitors category")
