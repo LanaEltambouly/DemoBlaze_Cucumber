@@ -85,29 +85,29 @@ public class HomePage {
         return new ProductPage(driver);
     }
     public CategoriesPage ClickOnCategories(){
-            driver.findElement(CategoriesLocator).click();
-            return new CategoriesPage(driver);
-        }
-        public PhonesCatPage ClickOnPhonesCat(){
-            driver.findElement(categoryPhonesLocator).click();
-            return new PhonesCatPage(driver);
-        }
-        public LaptopsCatPage ClickOnLaptopsCat(){
-            driver.findElement(categoryLaptopsLocator).click();
-            return new LaptopsCatPage(driver);
-        }
-        public MonitorsCatPage ClickOnMonitorsCat(){
-            driver.findElement(categoryMonitorsLocator).click();
-            return new MonitorsCatPage(driver);
-        }
-        public NextPage ClickOnNextButton(){
-            driver.findElement(NextButtonLocator).click();
-            return new NextPage(driver);
-        }
-        public PreviousPage ClickOnPreviousButton(){
-            driver.findElement(PreviousButtonLocator).click();
-            return new PreviousPage(driver);
-        }
+        driver.findElement(CategoriesLocator).click();
+        return new CategoriesPage(driver);
+    }
+    public PhonesCatPage ClickOnPhonesCat(){
+        driver.findElement(categoryPhonesLocator).click();
+        return new PhonesCatPage(driver);
+    }
+    public LaptopsCatPage ClickOnLaptopsCat(){
+        driver.findElement(categoryLaptopsLocator).click();
+        return new LaptopsCatPage(driver);
+    }
+    public MonitorsCatPage ClickOnMonitorsCat(){
+        driver.findElement(categoryMonitorsLocator).click();
+        return new MonitorsCatPage(driver);
+    }
+    public NextPage ClickOnNextButton(){
+        driver.findElement(NextButtonLocator).click();
+        return new NextPage(driver);
+    }
+    public PreviousPage ClickOnPreviousButton(){
+        driver.findElement(PreviousButtonLocator).click();
+        return new PreviousPage(driver);
+    }
 
     public boolean checkLogin(){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(LogInLocator)).isDisplayed();

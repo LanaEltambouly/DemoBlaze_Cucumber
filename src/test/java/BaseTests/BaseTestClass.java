@@ -43,7 +43,7 @@ public class BaseTestClass {
         wait = new WebDriverWait(driver,Duration.ofSeconds(15));
 
         categoriesPage = new CategoriesPage(driver);
-    phonesCatPage = new PhonesCatPage(driver);
+        phonesCatPage = new PhonesCatPage(driver);
         laptopsCatPage = new LaptopsCatPage(driver);
         monitorsCatPage = new MonitorsCatPage(driver);
     }

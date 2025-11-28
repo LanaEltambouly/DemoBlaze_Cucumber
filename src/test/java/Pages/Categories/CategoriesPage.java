@@ -25,6 +25,6 @@ public class CategoriesPage extends HomePage {
 
 
 
-    }
+}
 
 

@@ -26,7 +26,7 @@ public class ContactPage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
-   public void setContactEmail(String email){
+    public void setContactEmail(String email){
         wait.until(ExpectedConditions.visibilityOfElementLocated(contactEmailLocator)).sendKeys(email);
     }
 

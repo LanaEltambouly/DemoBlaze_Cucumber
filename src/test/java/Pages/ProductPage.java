@@ -28,7 +28,7 @@ public class ProductPage {
         wait.until(ExpectedConditions.elementToBeClickable(AddToCartLocator)).click();
     }
     public boolean checkProductName(){
-         return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductNameLocator)).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(ProductNameLocator)).isDisplayed();
     }
     public boolean checkProductimg(){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(Productimg)).isDisplayed();

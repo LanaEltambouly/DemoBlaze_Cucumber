@@ -6,7 +6,6 @@ import Pages.Categories.LaptopsCatPage;
 import Pages.Categories.MonitorsCatPage;
 import Pages.Categories.PhonesCatPage;
 import Pages.HomePage;
-import com.beust.ah.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,7 +1,6 @@
 package Tests;
 
 import BaseTests.BaseTestClass;
-import Pages.Categories.CategoriesPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,10 +12,10 @@ public class OtherPagesTest extends BaseTestClass {
     @Test
     public void verifyClickingNextFromLaptops(){
         laptopsCatPage = homepage.ClickOnLaptopsCat();
-         laptopsCatPage.ClickOnNextButton();
+        laptopsCatPage.ClickOnNextButton();
         System.out.println(laptopsCatPage.getProducts());
         System.out.println(laptopsCatPage.getExpectedPhonesAndMonitor);
-         Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.getExpectedPhonesAndMonitor));
+        Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.getExpectedPhonesAndMonitor));
 
     }
     @Test
@@ -51,7 +50,7 @@ public class OtherPagesTest extends BaseTestClass {
     public void verifyClickingPreviousFromLaptops(){
         laptopsCatPage = homepage.ClickOnLaptopsCat();
         laptopsCatPage.ClickOnPreviousButton();
-     Assert .assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
+        Assert .assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
     }
 
 

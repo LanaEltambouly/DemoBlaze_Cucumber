@@ -35,10 +35,10 @@ public class CartPage {
     }
 
     public void ClickOnDelete(int i){
-            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(DeleteLocator));
-            products = driver.findElements(DeleteLocator);
-            products.get(i).click();
-            wait.until(ExpectedConditions.stalenessOf(driver.findElement(RowLocator)));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(DeleteLocator));
+        products = driver.findElements(DeleteLocator);
+        products.get(i).click();
+        wait.until(ExpectedConditions.stalenessOf(driver.findElement(RowLocator)));
     }
 
 
@@ -50,7 +50,7 @@ public class CartPage {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(imageLocator));
         products = driver.findElements(imageLocator);
         for (WebElement p : products){
-        if(!p.isDisplayed()) return false;
+            if(!p.isDisplayed()) return false;
         }
         return true;
     }
