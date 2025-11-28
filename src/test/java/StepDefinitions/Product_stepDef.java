@@ -15,13 +15,6 @@ public class Product_stepDef {
     ProductPage productPage;
 
 
-    @Given("the user is on the Demoblaze home page")
-    public void TheUserIsonTheDemoBlazeHomePage(){
-        Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/");
-        Assert.assertTrue(homePage.getActualHomeStatment().contains(homePage.getExpectedHomeStatement()));
-
-    }
-
     @When("the user clicks on a product")
     public void theUserClicksOnAProduct() {
         productPage = homePage.clickOnProduct(0);
@@ -34,7 +27,8 @@ public class Product_stepDef {
 
     @Given("the user is on a product details page")
     public void theUserIsOnAProductDetailsPage() {
-        Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/prod.html?idp_=1" );
+        productPage = homePage.clickOnProduct(1);
+        Assert.assertTrue(driver.getCurrentUrl().contains("prod.html?idp_="));
     }
 
     @When("the user clicks the Add to cart button")

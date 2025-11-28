@@ -1,9 +1,10 @@
-/*Feature:
+Feature:
 
   Scenario: Verify place order with valid credentials
-    Given user filled place order form correctly
-    When user clicks Purchase
-    Then order should be completed
+    Given user is on Place Order page
+    When user enters valid data format
+    And clicks Purchase
+    Then a successful palced order message should be displayed
 
   Scenario: Verify place order without any credentials
     Given user is on Place Order Page
@@ -21,4 +22,3 @@
     When user leaves some fields empty
     And clicks Purchase
     Then error should appear
-*/

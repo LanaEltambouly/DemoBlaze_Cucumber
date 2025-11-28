@@ -18,10 +18,10 @@ public class SignUp_stepDef {
     String validPassword = "TEAMONE16!!";
     String existingUsername = "Test";
 
-    @Given("the user is on the Demoblaze home page")
+    /*@Given("the user is on the Demoblaze home page")
     public void theUserIsonTheDemoBlazeHomePage(){
         Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/");
-    }
+    }*/
 
     @When("the user clicks the Sign up Page")
     public void theUserClicksTheSignUpPage() {

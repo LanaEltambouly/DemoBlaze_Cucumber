@@ -49,12 +49,12 @@ public class LogIn_stepDef {         //no inheritance ashan hooks mn3mlsh mno in
 
     @And("the user enters invalid credentials")
     public void theUserEntersInvalidCredentials() {
-        loginPage.setUsername("WrongUser");
+        loginPage.setUsername("WrongUser!!!!!!!!!!!");
         loginPage.setPassword("WrongPass");
     }
 
-    @Then("an error message should be displayed")
-    public void anErrorMessageShouldBeDisplayed() {
+    @Then("An error message should be displayed")
+    public void AnErrorMessageShouldBeDisplayed() {
         Assert.assertEquals(loginPage.getActualMess(), loginPage.getExpectedWrongCredentialsMess());
     }
 

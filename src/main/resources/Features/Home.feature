@@ -1,4 +1,4 @@
-Feature:
+Feature: Home Functionality
   Scenario: Verify only phones are displayed when clicking Phones
     Given user is on Home Page
     When user clicks Phones category

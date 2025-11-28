@@ -1,6 +1,6 @@
-Feature:
+Feature: Product Functionality
   Scenario:
-    Given the user is on the Demoblaze home page
+    Given user is on Home Page
     When the user clicks on a product
     Then the product details page should be displayed
 

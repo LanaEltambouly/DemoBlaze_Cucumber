@@ -1,6 +1,6 @@
-Feature:
+Feature: SigUp Functionality
  Scenario: User signs up with valid credentials
-  Given the user is on the Demoblaze home page
+   Given user is on Home Page
   When the user clicks the Sign up Page
   And the user enters a valid username and password
   And the user clicks the Sign up button
@@ -8,7 +8,7 @@ Feature:
 
 
   Scenario: User signs up with an already registered username
-    Given the user is on the Demoblaze home page
+    Given user is on Home Page
     When the user clicks the Sign up Page
     And the user enters an existing username
     And the user enters a password
@@ -16,8 +16,8 @@ Feature:
     Then an error message should be displayed
 
 
-   Scenario 3: User signs up with empty fields
-     Given the user is on the Demoblaze home page
+   Scenario: User signs up with empty fields
+     Given user is on Home Page
      When the user clicks the Sign up Page
      And the user leaves all fields empty
      And the user clicks the Sign up button
