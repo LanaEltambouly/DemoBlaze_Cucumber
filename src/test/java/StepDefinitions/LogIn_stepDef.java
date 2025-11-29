@@ -18,10 +18,6 @@ public class LogIn_stepDef {         //no inheritance ashan hooks mn3mlsh mno in
     HomePage homepage = new HomePage(driver);
     LogInPage loginPage;
 
-    @Given("the user is on the Demoblaze home page")
-    public void theUserIsOnTheDemoBlazeHomePage(){
-        Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/");
-    }
 
 
     @When("the user clicks the Log in Page")
