@@ -23,6 +23,10 @@ public class Product_stepDef {
     @Then("the product details page should be displayed")
     public void theProductDetailsPageShouldBeDisplayed() {
         Assert.assertTrue(productPage.checkProductDescription());
+        Assert.assertTrue(productPage.checkProductimg());
+        Assert.assertTrue(productPage.checkProductPrice());
+        Assert.assertTrue(productPage.checkProductName());
+
     }
 
     @Given("the user is on a product details page")
