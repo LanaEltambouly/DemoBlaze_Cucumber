@@ -5,9 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTestClass {
+
+    int NumberOfProductsAddedToCart = 0;
+
+
     public void ProductToCartScenario(int i){
         productPage = homepage.clickOnProduct(i);
         productPage.clickAddToCart();
+        NumberOfProductsAddedToCart ++;
         productPage.clickOnOk();
     }
 
@@ -29,7 +34,7 @@ public class CartTest extends BaseTestClass {
         Assert.assertTrue(cartPage.checkPrices());
         Assert.assertTrue(cartPage.checkTitles());
         Assert.assertTrue(cartPage.checkTotalPrice());
-        Assert.assertEquals(cartPage.getProductsListSize(), 5);
+        Assert.assertEquals(cartPage.getNumberOfRows(), NumberOfProductsAddedToCart);
     }
 
 
@@ -49,40 +54,29 @@ public class CartTest extends BaseTestClass {
     }
 
     @Test(priority = 3)
-    public void verifyDeleteFromCart(){
+    public void verifyDeleteProductFromCart(){
         cartPage = productPage.clickOnCart();
-        cartPage.ClickOnDelete(0);
-        Assert.assertEquals(cartPage.getProductsListSize(), 4);
+        cartPage.DeleteProduct(0);
+        NumberOfProductsAddedToCart --;
+
+        Assert.assertEquals(cartPage.getNumberOfRows(), NumberOfProductsAddedToCart);
     }
 
     @Test(priority = 0)
     public void verifyEmptyCartDisplaysNothing(){
         cartPage = homepage.clickOnCart();
-        Assert.assertEquals(cartPage.getProductsListSize(), 0);
+        Assert.assertEquals(cartPage.getNumberOfRowsWhenCartIsEmpty(), NumberOfProductsAddedToCart);
     }
 
-    @Test(priority = 6)
-    public void verifyEmptyCartDisablePlaceOrder(){
-        cartPage = homepage.clickOnCart();
-        Assert.assertEquals(cartPage.getProductsListSize(), 0);
-        Assert.assertTrue(cartPage.PlaceOrderButtonDisability());  //    BUUUUUUUUUUUGGGGGGG
-    }
 
     @Test(priority = 5)
-    public void verifyDeletingAllProducts(){
+    public void verifyDeletingAllProductsCausesEmptyCart(){
         cartPage = productPage.clickOnCart();
-        cartPage.ClickOnDelete(0);
-        cartPage.ClickOnDelete(1);
-        cartPage.ClickOnDelete(2);
-        cartPage.ClickOnDelete(3);
-
-
-        Assert.assertEquals(cartPage.getProductsListSize(), 0);
-        Assert.assertTrue(cartPage.PlaceOrderButtonDisability());   //    BUUUUUUUUUUUGGGGGGG
-
+        cartPage.DeleteAllProducts();
+        Assert.assertEquals(cartPage.getNumberOfRowsWhenCartIsEmpty(), NumberOfProductsAddedToCart);
+        Assert.assertTrue(cartPage.PlaceOrderButtonDisability()); //    BUGGGGG
 
     }
-
 
 
 }

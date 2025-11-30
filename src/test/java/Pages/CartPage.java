@@ -21,7 +21,7 @@ public class CartPage {
     By TotalPriceLocator = By.id("totalp");
     By RowLocator = By.className("success");
     List<WebElement> products;
-    List<WebElement> DeletedProducts;
+
 
 
     public CartPage(WebDriver driver){
@@ -34,46 +34,25 @@ public class CartPage {
         return new PlaceOrderPage(driver);
     }
 
-    public void ClickOnDelete(int i){
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(DeleteLocator));
-        products = driver.findElements(DeleteLocator);
-        products.get(i).click();
-        wait.until(ExpectedConditions.stalenessOf(driver.findElement(RowLocator)));
-    }
 
 
     public boolean checkTotalPrice(){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(TotalPriceLocator)).isDisplayed();
     }
 
-    public boolean displayedImage(){
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(imageLocator));
-        products = driver.findElements(imageLocator);
-        for (WebElement p : products){
-            if(!p.isDisplayed()) return false;
-        }
-        return true;
-    }
-
 
     public double getActualTotalProductPrice() {
-        List<WebElement> priceElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(PriceLocator));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(PriceLocator));
+        List<WebElement> priceElements = driver.findElements(PriceLocator);
         double sum = 0.0;
         for (WebElement priceElement : priceElements) {
-            sum += Double.parseDouble(priceElement.getText());
+            String price = priceElement.getText();
+            sum += Double.parseDouble(price);
         }
         return sum;
     }
 
 
-    public boolean checkTitles(){
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TitleLocator));
-        products = driver.findElements(TitleLocator);
-        for (WebElement p : products){
-            if(!p.isDisplayed()) return false;
-        }
-        return true;
-    }
     public Double getFoundTotalPrice(){
         return Double.parseDouble(wait.until(ExpectedConditions.visibilityOfElementLocated(TotalPriceLocator)).getText());
     }
@@ -86,14 +65,61 @@ public class CartPage {
         return true;
     }
 
-    public int getProductsListSize(){
-        products = driver.findElements(RowLocator);
-        return products.size();
+
+    public boolean displayedImage(){
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(imageLocator));
+        products = driver.findElements(imageLocator);
+        for (WebElement p : products){
+            if(!p.isDisplayed()) return false;
+        }
+        return true;
+    }
+    public boolean checkTitles(){
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(TitleLocator));
+        products = driver.findElements(TitleLocator);
+        for (WebElement p : products){
+            if(!p.isDisplayed()) return false;
+        }
+        return true;
     }
 
     public boolean PlaceOrderButtonDisability(){
         return !driver.findElement(PlaceOrderButtonLocator).isEnabled();
     }
+
+
+    public int getNumberOfRows(){
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(RowLocator));
+        List<WebElement> Rows = driver.findElements(RowLocator);
+        return Rows.size();
+    }
+
+    public int getNumberOfRowsWhenCartIsEmpty(){
+        List<WebElement> Rows = driver.findElements(RowLocator);
+        return Rows.size();
+    }
+
+    public void DeleteProduct(int i){
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(RowLocator));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(DeleteLocator));
+
+        driver.findElements(RowLocator).get(i).findElement(DeleteLocator).click();
+        wait.until(ExpectedConditions.stalenessOf( driver.findElements(RowLocator).get(i)));
+    }
+
+    public void DeleteAllProducts(){
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(RowLocator));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(DeleteLocator));
+
+        List<WebElement> deleteProducts = driver.findElements(DeleteLocator);
+        for(WebElement dP : deleteProducts){
+            dP.click();
+        }
+
+    }
+
+
+
 
 
 
