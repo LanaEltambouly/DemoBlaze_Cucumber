@@ -19,11 +19,11 @@ public class Hooks {          //hya hya el BaseTestClass bs notations bta3t cucu
     }
 
 
-    public void clearAlert() {
-        try {
-            driver.switchTo().alert().accept();
-        } catch (NoAlertPresentException ignored) {}
-    }
+//    public void clearAlert() {
+//        try {
+//            driver.switchTo().alert().accept();
+//        } catch (NoAlertPresentException ignored) {}
+//    }
 
 
     @After
