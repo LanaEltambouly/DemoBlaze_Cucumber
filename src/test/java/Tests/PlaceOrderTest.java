@@ -57,9 +57,8 @@ public class  PlaceOrderTest extends BaseTestClass {
         placeOrderPage.enterYear("kjjj");
         placeOrderPage.clickPurchase();
         Assert.assertTrue(placeOrderPage.getActualPurchaseMessage().contains("Error you should enter valid syntax"));
-
-
     }
+
     @Test
     public void verifyPlaceOrderWithMissingFields(){  // BUUUUUGGGGGGG
         productPage= homepage.clickOnProduct(1);

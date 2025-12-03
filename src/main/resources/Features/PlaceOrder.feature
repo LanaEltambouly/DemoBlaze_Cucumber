@@ -1,24 +1,13 @@
 Feature: PlaceOrder Functionality
 
-  Scenario: Verify place order with valid credentials
-    Given user is on Place Order page
-     When user enters valid data format
-     And user clicks Purchase
-     Then a successful palced order message should be displayed
-
-  Scenario: Verify place order without any credentials
-    Given user is on Place Order page
-     When user clicks Purchase without entering fields
-     Then error message should appear
-
-  Scenario: Verify place order with wrong syntax
-    Given user is on Place Order page
-    When user enters invalid data format
-    And user clicks Purchase
-    Then error message should appear
-
-  Scenario: Verify place order with missing fields
-    Given user is on Place Order page
-    When user leaves some fields empty
-    And user clicks Purchase
-    Then error message should appear
+Scenario Outline:  place order test cases with different data providers
+  Given user is on Place Order page
+  When user enters place order data "<name>" "<country>" "<city>" "<card>" "<month>" "<year>"
+  And clicks Purchase
+  Then a place order message should be displayed accourding to "<Input>"
+Examples:
+| name        | country | city  | card            | month | year |Input|
+| Nasser Ali  | Egypt   | Cairo | 5162659515495   | 05    | 2025 |   Valid data  |
+|             |         |       |                 |       |      |     All empty |
+| 111111      | 54848   | 8878  | mkkjgtfrf       | mnjnj  | kjjj | Invalid formats |
+| nasser      |         |       | 5162659515495   |       |      |Some fields missing  |
