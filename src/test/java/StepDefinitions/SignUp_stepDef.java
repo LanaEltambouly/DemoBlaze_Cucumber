@@ -3,19 +3,18 @@ package StepDefinitions;
 import Pages.HomePage;
 import Pages.SignUpPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static HooksPackage.Hooks.driver;
+import static StepDefinitions.Hooks.driver;
 
 public class SignUp_stepDef {
     HomePage homePage = new HomePage(driver);
     SignUpPage signuppage ;
 
-    String validUsername = "TeamOne_1_6!!" ;
-    String validPassword = "TEAMONE16!!";
+    String validUsername = "TeamOne_1_9!!" ;
+    String validPassword = "TEAMONE19!!";
     String existingUsername = "Test";
 
 

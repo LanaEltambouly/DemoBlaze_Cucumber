@@ -1,14 +1,12 @@
 package StepDefinitions;
 
-import HooksPackage.Hooks;
 import Pages.AboutUsPage;
 import Pages.HomePage;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import static HooksPackage.Hooks.driver;
+import static StepDefinitions.Hooks.driver;
 
 public class AboutUs_stepDef {
     HomePage homePage=new HomePage(driver);

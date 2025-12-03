@@ -1,15 +1,13 @@
 package StepDefinitions;
 
-import HooksPackage.Hooks;
 import Pages.HomePage;
 import Pages.LogInPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static HooksPackage.Hooks.driver;
+import static StepDefinitions.Hooks.driver;
 
 public class LogIn_stepDef {         //no inheritance ashan hooks mn3mlsh mno instance tany w y7sal infinite loop
                                      //create object mn kol haga

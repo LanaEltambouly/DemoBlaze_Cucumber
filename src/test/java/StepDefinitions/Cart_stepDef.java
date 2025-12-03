@@ -1,17 +1,13 @@
 package StepDefinitions;
 
-import HooksPackage.Hooks;
 import Pages.CartPage;
 import Pages.HomePage;
 import Pages.PlaceOrderPage;
 import Pages.ProductPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-
-import static HooksPackage.Hooks.driver;
 
 public class Cart_stepDef {
     HomePage homepage = new HomePage(Hooks.driver);

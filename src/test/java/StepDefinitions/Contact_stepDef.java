@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 
-import static HooksPackage.Hooks.driver;
+import static StepDefinitions.Hooks.driver;
 
 public class Contact_stepDef {
 

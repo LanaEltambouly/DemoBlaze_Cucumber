@@ -1,6 +1,5 @@
 package StepDefinitions;
 
-import HooksPackage.Hooks;
 import Pages.Categories.CategoriesPage;
 import Pages.Categories.LaptopsCatPage;
 import Pages.Categories.MonitorsCatPage;
@@ -11,7 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static HooksPackage.Hooks.driver;  //****
+import static StepDefinitions.Hooks.driver;  //****
 
 public class Home_stepDef {
     HomePage homePage = new HomePage(Hooks.driver);
