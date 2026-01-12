@@ -12,8 +12,8 @@ public class SignUpTest extends BaseTestClass{
     @Test
     public void verifyValidSignUp(){
         signuppage = homepage.clickOnSignUp();
-        signuppage.setUsername("TeamOne_1_6!!");
-        signuppage.setPassword("TEAMONE16!!");
+        signuppage.setUsername("LANAAAA");
+        signuppage.setPassword("LANA20_9!!!");
         signuppage.clickOnSignUp();
         Assert.assertEquals(signuppage.getActualMess(),signuppage.getExpectedSuccessfulSignUpMess());
         signuppage.clickOnOk();

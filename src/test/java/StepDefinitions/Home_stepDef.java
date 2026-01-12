@@ -23,11 +23,36 @@ public class Home_stepDef {
     @Given("user is on Home Page")
     public void UserIsonHomePage(){
         Assert.assertEquals(driver.getCurrentUrl(), "https://demoblaze.com/");
+        Assert.assertTrue(homePage.checkImages());
+    }
+
+
+    @When("user clicks Monitors category")
+    public void userClicksMonitorsCategory() {
+        monitorsCatPage = homePage.ClickOnMonitorsCat();
+    }
+
+    @Then("only monitors should be displayed")
+    public void onlyMonitorsShouldBeDisplayed() {
+        monitorsCatPage = homePage.ClickOnMonitorsCat();
+        Assert.assertTrue(monitorsCatPage.getProducts().containsAll(monitorsCatPage.expectedMonitors));
+
+    }
+
+    @When("user clicks Categories")
+    public void userClicksCategories() {
+        categoriesPage = homePage.ClickOnCategories();
+       }
+
+    @Then("all products should be displayed")
+    public void allProductsShouldBeDisplayed() {
+        categoriesPage = homePage.ClickOnCategories();
+        Assert.assertTrue(categoriesPage.expectedAllProducts.containsAll(categoriesPage.getProducts()));
     }
 
     @When("user clicks Phones category")
     public void userClicksPhonesCategory() {
-       phonesCatPage = homePage.ClickOnPhonesCat();
+        phonesCatPage = homePage.ClickOnPhonesCat();
     }
 
     @Then("only phones should be displayed")
@@ -38,30 +63,11 @@ public class Home_stepDef {
     @When("user clicks Laptops category")
     public void userClicksLaptopsCategory() {
         laptopsCatPage = homePage.ClickOnLaptopsCat();
-    }
+       }
 
     @Then("only laptops should be displayed")
     public void onlyLaptopsShouldBeDisplayed() {
+        laptopsCatPage = homePage.ClickOnLaptopsCat();
         Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
-    }
-
-        @When("user clicks Monitors category")
-    public void userClicksMonitorsCategory() {
-        monitorsCatPage = homePage.ClickOnMonitorsCat();
-    }
-
-    @Then("only monitors should be displayed")
-    public void onlyMonitorsShouldBeDisplayed() {
-        Assert.assertTrue(monitorsCatPage.getProducts().containsAll(monitorsCatPage.expectedMonitors));
-    }
-
-    @When("user clicks Categories")
-    public void userClicksCategories() {
-        categoriesPage = homePage.ClickOnCategories();
-    }
-
-    @Then("all products should be displayed")
-    public void allProductsShouldBeDisplayed() {
-        Assert.assertTrue(categoriesPage.expectedAllProducts.containsAll(categoriesPage.getProducts()));
     }
 }
