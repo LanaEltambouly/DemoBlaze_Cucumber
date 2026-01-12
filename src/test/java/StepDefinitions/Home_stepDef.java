@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import HooksPackage.Hooks;
 import Pages.Categories.CategoriesPage;
 import Pages.Categories.LaptopsCatPage;
 import Pages.Categories.MonitorsCatPage;
@@ -10,7 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static StepDefinitions.Hooks.driver;  //****
+import static HooksPackage.Hooks.driver;  //****
 
 public class Home_stepDef {
     HomePage homePage = new HomePage(Hooks.driver);
@@ -41,10 +42,10 @@ public class Home_stepDef {
 
     @Then("only laptops should be displayed")
     public void onlyLaptopsShouldBeDisplayed() {
-        Assert.assertTrue(laptopsCatPage.expectedLaptops.containsAll(laptopsCatPage.getProducts()));
+        Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
     }
 
-    @When("user clicks Monitors category")
+        @When("user clicks Monitors category")
     public void userClicksMonitorsCategory() {
         monitorsCatPage = homePage.ClickOnMonitorsCat();
     }

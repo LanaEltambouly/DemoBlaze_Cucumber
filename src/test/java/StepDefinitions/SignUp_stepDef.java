@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static StepDefinitions.Hooks.driver;
+import static HooksPackage.Hooks.driver;
 
 public class SignUp_stepDef {
     HomePage homePage = new HomePage(driver);

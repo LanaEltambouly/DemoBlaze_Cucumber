@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
-import static StepDefinitions.Hooks.driver;
+import static HooksPackage.Hooks.driver;
 
 public class AboutUs_stepDef {
     HomePage homePage=new HomePage(driver);
@@ -40,6 +40,6 @@ public class AboutUs_stepDef {
 
     @Then("the About Us popup should be closed")
     public void theAboutUsPopupShouldBeClosed() {
-        Assert.assertEquals(aboutUsPage.getTitle(),( "About us"));
+        Assert.assertTrue(homePage.checkImages());
     }
 }

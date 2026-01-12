@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-import static StepDefinitions.Hooks.driver;
+import static HooksPackage.Hooks.driver;
 
 public class LogIn_stepDef {         //no inheritance ashan hooks mn3mlsh mno instance tany w y7sal infinite loop
                                      //create object mn kol haga

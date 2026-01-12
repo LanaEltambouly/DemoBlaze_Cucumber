@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import HooksPackage.Hooks;
 import Pages.CartPage;
 import Pages.HomePage;
 import Pages.PlaceOrderPage;
