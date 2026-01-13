@@ -13,7 +13,7 @@ public class SignUp_stepDef {
     HomePage homePage = new HomePage(driver);
     SignUpPage signuppage ;
 
-    String validUsername = "LANAAAA" ;
+    String validUsername = "LANAAAAAAAA!" ;
     String validPassword = "LANA209!!!";
     String existingUsername = "Test";
 
