@@ -77,4 +77,5 @@ public class Contact_stepDef {
         Assert.assertTrue(contactPage.getActualMess().contains(contactPage.getExpectedAnErrorMsgForEmptyUsernameAndPassword()));
         contactPage.clickOnOk();
     }
+
 }

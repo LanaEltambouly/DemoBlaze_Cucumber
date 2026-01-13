@@ -1,8 +1,15 @@
 package Tests;
 
 import BaseTests.BaseTestClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+import static HooksPackage.Hooks.driver;
 
 
 public class CategoriesTest extends BaseTestClass {
@@ -18,6 +25,8 @@ public class CategoriesTest extends BaseTestClass {
     @Test
     public void verifyOnlyLaptopsAreDisplayedWhenClickOnLaptops() {
         laptopsCatPage = homepage.ClickOnLaptopsCat();
+        WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".card-title a")));
         Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
     }
 

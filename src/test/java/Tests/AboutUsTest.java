@@ -10,7 +10,6 @@ public class AboutUsTest extends BaseTestClass {
     @Test(priority = 0)
     public void verifyVideoIsDisplayedWhenClickAboutUs(){
         AboutUsPage aboutUsPage = homepage.clickOnAboutUs();
-        //aboutUsPage = homepage.clickOnAboutUs();
         Assert.assertTrue(aboutUsPage.videoIsDisplayed());
     }
 

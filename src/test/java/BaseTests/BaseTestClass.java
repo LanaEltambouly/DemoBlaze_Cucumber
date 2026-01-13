@@ -42,22 +42,11 @@ public class BaseTestClass {
         //driver = new ChromeDriver() ;
         homepage = new HomePage(driver);
         wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-
-        categoriesPage = new CategoriesPage(driver);
-        phonesCatPage = new PhonesCatPage(driver);
-        laptopsCatPage = new LaptopsCatPage(driver);
-        monitorsCatPage = new MonitorsCatPage(driver);
     }
 
     @BeforeMethod
     public void goToHomePage(){
         driver.get("https://demoblaze.com/");
-    }
-    @AfterMethod
-    public void clearAlert() {
-        try {
-            driver.switchTo().alert().accept();
-        } catch (NoAlertPresentException ignored) {}
     }
 
 

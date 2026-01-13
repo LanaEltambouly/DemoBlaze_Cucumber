@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
-
 public class Hooks {          //hya hya el BaseTestClass bs notations bta3t cucumber
     public static WebDriver driver; //for no object creation
 
