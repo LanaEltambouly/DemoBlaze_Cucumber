@@ -39,7 +39,6 @@ public class Home_stepDef {
 
     @Then("only monitors should be displayed")
     public void onlyMonitorsShouldBeDisplayed() {
-        monitorsCatPage = homePage.ClickOnMonitorsCat();
         WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".card-title a")));
         Assert.assertTrue(monitorsCatPage.getProducts().containsAll(monitorsCatPage.expectedMonitors));
@@ -53,7 +52,6 @@ public class Home_stepDef {
 
     @Then("all products should be displayed")
     public void allProductsShouldBeDisplayed() {
-        categoriesPage = homePage.ClickOnCategories();
         Assert.assertTrue(categoriesPage.expectedAllProducts.containsAll(categoriesPage.getProducts()));
     }
 
@@ -74,9 +72,6 @@ public class Home_stepDef {
 
     @Then("only laptops should be displayed")
     public void onlyLaptopsShouldBeDisplayed() {
-        laptopsCatPage = homePage.ClickOnLaptopsCat();
-        WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".card-title a")));
         Assert.assertTrue(laptopsCatPage.getProducts().containsAll(laptopsCatPage.expectedLaptops));
     }
 }

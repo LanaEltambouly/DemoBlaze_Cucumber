@@ -1,10 +1,5 @@
 Feature: Home Functionality
 
-  Scenario: Verify all products are displayed when clicking Categories
-    Given user is on Home Page
-    When user clicks Categories
-    Then all products should be displayed
-
   Scenario: Verify only phones are displayed when clicking Phones
     Given user is on Home Page
     When user clicks Phones category
@@ -20,3 +15,8 @@ Feature: Home Functionality
     Given user is on Home Page
     When user clicks Monitors category
     Then only monitors should be displayed
+
+  Scenario: Verify all products are displayed when clicking Categories
+    Given user is on Home Page
+    When user clicks Categories
+    Then all products should be displayed
